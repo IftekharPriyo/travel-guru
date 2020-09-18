@@ -1,19 +1,25 @@
 import React from 'react';
 import './DashBoard.css'
-import Coxs from '../../Image/Coxs.png'
+import Cover from '../../Image/Cover.png'
 import FakeData from '../FakeData/FakeData'
-import PlaceLink from '../PlaceLink/PlaceLink';
-import HeaderDark from '../HeaderTypeOne/HeaderTypeOne';
+import PlaceCards from '../PlaceCards/PlaceCards';
+import HeaderTypeOne from '../HeaderTypeOne/HeaderTypeOne';
+import DashTexts from '../DashTexts/DashTexts';
 const Home = () => {
     return (
-        <div className="img-fluid" style={{ backgroundImage: `url(${Coxs})` }}>
-        <HeaderDark></HeaderDark>
+        <div className="img-fluid" style={{ backgroundImage: `url(${Cover})` }}>
+        <HeaderTypeOne></HeaderTypeOne>
             <div className="container">
-                <div className="row travel-place-cards">
-                    <div className="col-12">
-                    <h1 style={{color: 'white',textAlign: 'center'}} >Where Do You Want To Go?</h1>
+                <div className="row cards">
+                    <div className="col-6 dash-texts">
+                        {
+                            FakeData.map(place=> <DashTexts place={place}></DashTexts>)
+                        }
+                    </div>
+                    <div className="col-6">
+                    <h1 style={{color: 'white',textAlign: 'center'}} >Choose Destination</h1>
                     {
-                        FakeData.map(plc=><PlaceLink key={plc.key} plc={plc}></PlaceLink>)
+                        FakeData.map(place=><PlaceCards key={place.key} plc={place}></PlaceCards>)
                     }
 
                     </div>

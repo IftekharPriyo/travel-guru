@@ -4,18 +4,12 @@ import { Link, useParams } from 'react-router-dom';
 import FakeData from '../FakeData/FakeData';
 import './Booking.css'
 import HeaderDark from '../HeaderTypeOne/HeaderTypeOne';
-import Time from '../Time/Time';
-// import { PlaceContext } from '../../App';
+import Calendar from '../Calendar/Calendar';
 
 const Booking = () => {
     const { Id } = useParams();
     const selectedPlace = FakeData.filter(place => parseInt(place.key) === parseInt(Id))
     const bgImage = selectedPlace[0].image
-
-    // const [place,setPlace] = useContext(PlaceContext);
-
-    // setPlace(Id);
-
 
     return (
         <div style={{ backgroundImage: `url(${bgImage})` }} >
@@ -37,7 +31,7 @@ const Booking = () => {
                                 <Form.Label>Destination</Form.Label>
                                 <Form.Control defaultValue={selectedPlace[0].place} type="origin"  />
                             </Form.Group>
-                            <Time></Time>
+                            <Calendar></Calendar>
                             <Link to='/hotel'>
                             <button  type="submit">
                                 Start Booking

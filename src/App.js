@@ -11,12 +11,11 @@ import {
 import NotFound from './Components/NotFound/NotFound';
 import Booking from './Components/Booking/Booking';
 import Hotel from './Components/Hotel/Hotel';
-import Login from './Components/Auth/Login';
+import Auth from './Components/Auth/Auth';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 
-// export const PlaceContext = createContext();
 
 function App(props) {
   const [loggedInUser,setLoggedInUser] = useState({});
@@ -39,7 +38,7 @@ function App(props) {
             <Hotel></Hotel>
           </PrivateRoute>
           <Route path='/login'>
-          <Login></Login>
+          <Auth></Auth>
           </Route>
           <Route exact path='/'>
             <DashBoard></DashBoard>

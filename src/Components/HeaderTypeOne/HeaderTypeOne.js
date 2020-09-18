@@ -6,7 +6,7 @@ import Logo from '../../Logo.png';
 import './HeaderTypeOne.css'
 
 
-const HeaderDark = () => {
+const HeaderTypeOne = () => {
     const[loggedInUser,setLoggedInUser] = useContext(UserContext)
     return (
         <div className="header-nav" >
@@ -35,4 +35,4 @@ const HeaderDark = () => {
     );
 };
 
-export default HeaderDark;
+export default HeaderTypeOne;
