@@ -22,9 +22,7 @@ const Hotel = () => {
                     
                 </div>
                 <div className="col-6 col-md-6" style={{ height: '400px', width: '100%' }}>
-                    {/* <GoogleMap></GoogleMap> */}
-                    <h4>Map doesnt work while deployed</h4>
-                    <h6>Map Component is commented in the parent Component</h6>
+                    <GoogleMap></GoogleMap>
                 </div>
             </div>
         </div>

@@ -1,35 +1,39 @@
-import React, { Component } from 'react';
+import React, {useContext } from 'react';
 import GoogleMapReact from 'google-map-react';
- 
+import { PlaceContext } from '../../App';
+import placeDetails from '../FakeData/FakeData';
+
+
+
+
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
- 
-class GoogleMap extends Component {
-  static defaultProps = {
-    center: {
-      lat: 23.6850,
-      lng: 90.3563
-    },
-    zoom: 5
-  };
- 
-  render() {
+
+
+const GoogleMap = () => {
+    const [place, setPlace] = useContext(PlaceContext);
+
+    const placeArray = placeDetails.filter(plc => parseInt(plc.key) === parseInt(place))
+    const lattitude = placeArray[0].lat
+    const longitude = placeArray[0].lng
+    console.log(lattitude,longitude);
+   
+    
     return (
-      // Important! Always set the container height explicitly
-      <div style={{ height: '550px', width: '80%', margin:"auto", marginTop:"40px" }}>
+      <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
-          
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
+          bootstrapURLKeys={{ key: 'AIzaSyDw0R0Hb_DiVfM0VgZLBr9ZwjowFwu8RSY' }}
+          defaultCenter={{lat:parseInt(lattitude),lng:parseInt(longitude)}}
+          defaultZoom={10}
         >
           <AnyReactComponent
-            lat={23.6850}
-            lng={90.3563}
-            text="My Marker"
+          lat={parseInt(lattitude)}
+          lng={parseInt(longitude)}
+          text='here'
           />
         </GoogleMapReact>
       </div>
     );
-  }
+
 }
- 
+
 export default GoogleMap;
