@@ -1,0 +1,13 @@
+div{
+    font-family:'Montserrat','Bebas Neue', cursive;
+    font-weight:bold;
+    background-size:cover;
+}
+.place-cards{
+    border-radius:10px;
+    width:300px;
+    height:200px;
+}
+.travel-place-cards{
+    margin-bottom:400px;
+}
