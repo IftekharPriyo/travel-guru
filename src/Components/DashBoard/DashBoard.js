@@ -5,6 +5,7 @@ import FakeData from '../FakeData/FakeData'
 import PlaceCards from '../PlaceCards/PlaceCards';
 import HeaderTypeOne from '../HeaderTypeOne/HeaderTypeOne';
 import DashTexts from '../DashTexts/DashTexts';
+import placeDetails from '../FakeData/FakeData';
 const Home = () => {
     return (
         <div className="img-fluid" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),
@@ -14,7 +15,7 @@ const Home = () => {
                 <div className="row cards">
                     <div className="col-6 dash-texts">
                         {
-                            FakeData.map(place=> <DashTexts place={place}></DashTexts>)
+                           placeDetails.map(place=> <DashTexts place={place}></DashTexts>)
                         }
                     </div>
                     <div className="col-6">
