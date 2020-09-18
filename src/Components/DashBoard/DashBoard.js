@@ -19,7 +19,7 @@ const Home = () => {
                     <div className="col-6">
                     <h1 style={{color: 'white',textAlign: 'center'}} >Choose Destination</h1>
                     {
-                        FakeData.map(place=><PlaceCards key={place.key} plc={place}></PlaceCards>)
+                        FakeData.map(place=><PlaceCards key={place.key} place={place}></PlaceCards>)
                     }
 
                     </div>

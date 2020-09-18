@@ -18,7 +18,7 @@ const HeaderTypeTwo = () => {
             <Nav.Link href="#link">Destination</Nav.Link>
             <Nav.Link href="#link">Blog</Nav.Link>
             <Nav.Link href="#link">Contact</Nav.Link>
-            <Nav.Link href="#link">User Email : {loggedInUser.email}</Nav.Link>
+            <Nav.Link href="#link">SignedIn User: {loggedInUser.email}</Nav.Link>
 
             </Nav>
         </Navbar.Collapse>

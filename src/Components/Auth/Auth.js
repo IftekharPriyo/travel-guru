@@ -6,6 +6,7 @@ import './Auth.css'
 import HeaderTypeTwo from '../HeaderTypeTwo/HeaderTypeTwo';
 import google from '../../Icon/google.png'
 import fb from '../../Icon/fb.png'
+import TextField from '@material-ui/core/TextField';
 import { createUserWithEmailAndPassword, handleFbSignIn, handleGoogleSignIn, initializeLoginFrameWork, signInWithEmailAndPassword } from './LoginManager';
 
 
@@ -127,25 +128,22 @@ const Auth = () => {
                             {newUser ? "Create an Account" : "Log In"}
                         </p>
                         <Form.Group controlId="formBasicEmail">
-                            {newUser && <Form.Label>First Name</Form.Label>}
-                            {newUser && <Form.Control  onBlur={handleBlur} type="text" name="firstName" placeholder="Your First Name" />}
-                            {newUser && <Form.Label>Last Name</Form.Label>}
-                            {newUser && <Form.Control  onBlur={handleBlur} type="text" name="lastName" placeholder="Your Last Name" />}
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" name="email" onBlur={handleBlur} placeholder="Enter email" required />
-                            <Form.Text className="text-muted">
-                                We'll never share your email with anyone else.
-                            </Form.Text>
+                
+                            {newUser && <TextField id="standard-basic"  onBlur={handleBlur} type="text" name="firstName" placeholder="Your First Name" />} <br/>
+                            
+                            {newUser && <TextField id="standard-basic" onBlur={handleBlur} type="text" name="lastName" placeholder="Your Last Name" />} <br/>
+                            
+                            <TextField id="standard-basic" type="email" name="email" onBlur={handleBlur} placeholder="Enter email" required /> <br/>
+        
                         </Form.Group>
 
-                        <Form.Group controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" onBlur={handleBlur} name="password" placeholder="Password" required />
+                        <Form.Group controlId="formBasicPassword"> 
+                            <TextField id="standard-basic" type="password" onBlur={handleBlur} name="password" placeholder="Password" required /> <br/>
                         </Form.Group>
                        
                     </Form>
                     <div className="row justify-content-center">
-                    <input style={{ backgroundColor: '#F9A51A', padding: '10px 8px 10px 8px', border: '2px solid #F9A51A' }} onClick={handleSubmit} type="submit" value={newUser ? "Create an account" : "Login"} /> <br /><br />
+                    <input style={{  padding: '10px 8px 10px 8px' }} onClick={handleSubmit} type="submit" value={newUser ? "Create an account" : "Login"} /> <br /><br />
                 </div><br/>
                 <p style={{ color: 'black' }} >{!newUser ? "Don't have an account?" : "Already Have an Account?"} <span className="toggle" onClick={() => setNewUser(!newUser)} >{!newUser ? 'Sign Up' : 'Login'}</span></p>
                 <button style={{ backgroundColor: 'white' }} onClick={googleSignIn} > <img style={{ height: '20px', width: '20px' }} src={google} alt='google' ></img> Continue With Google</button>

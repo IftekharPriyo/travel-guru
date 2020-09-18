@@ -6,6 +6,7 @@ import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
 } from '@material-ui/pickers';
+import './Calendar.css'
 
 const Time = () => {
 
@@ -21,7 +22,7 @@ const Time = () => {
     setSelectedDate(date);
   };
   return (
-    <div>
+    <div className='cal'>
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
         <Grid>
           <KeyboardDatePicker
