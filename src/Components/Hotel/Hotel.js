@@ -1,8 +1,5 @@
 import React, { useContext } from 'react';
 import './Hotel.css';
-import roomOne from '../../Image/roomOne.png'
-import roomTwo from '../../Image/roomTwo.png'
-import roomThree from '../../Image/roomThree.png'
 import HeaderTypeTwo from '../HeaderTypeTwo/HeaderTypeTwo';
 import star from '../../Icon/star.png'
 import { Map } from 'google-maps-react';
