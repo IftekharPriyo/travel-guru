@@ -1,8 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './Hotel.css';
 import HeaderTypeTwo from '../HeaderTypeTwo/HeaderTypeTwo';
-import star from '../../Icon/star.png'
-import { Map } from 'google-maps-react';
 import GoogleMap from '../GoogleMap/GoogleMap'
 import { hotelsInfo } from '../FakeData/FakeData';
 import HotelData from '../HotelData/HotelData';
@@ -24,9 +22,9 @@ const Hotel = () => {
                     
                 </div>
                 <div className="col-6 col-md-6" style={{ height: '400px', width: '100%' }}>
-                    <h4>Map Doesnt work in deployed site.</h4>
-                    <h5>Code in the repo and component in parent commented out</h5>
                     {/* <GoogleMap></GoogleMap> */}
+                    <h4>Map doesnt work while deployed</h4>
+                    <h6>Map Component is commented in the parent Component</h6>
                 </div>
             </div>
         </div>
