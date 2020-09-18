@@ -5,6 +5,8 @@ import roomTwo from '../../Image/roomTwo.png'
 import roomThree from '../../Image/roomThree.png'
 import HeaderTypeTwo from '../HeaderTypeTwo/HeaderTypeTwo';
 import star from '../../Icon/star.png'
+import { Map } from 'google-maps-react';
+import GoogleMap from '../GoogleMap/GoogleMap'
 
 
 
@@ -47,9 +49,9 @@ const Hotel = () => {
                         </div> </div>
                     </div>
                 </div>
-                <div className="col-6">
-                
-
+                <div className="col-6 col-md-6" style={{ height: '400px', width: '100%' }}>
+                    <h1>Map</h1>
+                    <GoogleMap></GoogleMap>
                 </div>
             </div>
         </div>

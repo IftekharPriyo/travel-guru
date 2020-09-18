@@ -1,23 +1,28 @@
 import React, { useContext } from 'react';
-import {  Form} from 'react-bootstrap';
+import {Form} from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 import FakeData from '../FakeData/FakeData';
 import './Booking.css'
-import HeaderDark from '../HeaderTypeOne/HeaderTypeOne';
+import HeaderTypeOne from '../HeaderTypeOne/HeaderTypeOne';
 import Calendar from '../Calendar/Calendar';
+import { PlaceContext } from '../../App';
 
 const Booking = () => {
+    
     const { Id } = useParams();
-    const selectedPlace = FakeData.filter(place => parseInt(place.key) === parseInt(Id))
-    const bgImage = selectedPlace[0].image
+    const placeToGo = FakeData.filter(place => parseInt(place.key) === parseInt(Id))
+    const background = placeToGo[0].image;
+    const [place,setPlace] = useContext(PlaceContext);
+    setPlace(Id);
 
     return (
-        <div style={{ backgroundImage: `url(${bgImage})` }} >
-           <HeaderDark></HeaderDark>
+        <div style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)), url(${background})`, backgroundSize:"cover", padding:"0 100px" }} >
+           <HeaderTypeOne></HeaderTypeOne>
             <div className="row">
                 <div className="col-md-5 col-sm-12 travel-place-description">
-                    <h1 style={{color: 'white'}} >{selectedPlace[0].place}</h1>
-                    <p style={{color: 'white'}} >{selectedPlace[0].description}</p>
+                    <h1 style={{color: 'white'}} >{placeToGo[0].place}</h1>
+                    <p style={{color: 'white'}} >{placeToGo[0].description}</p>
                 </div>
                 <div className="col-md-7 col-sm-12">
                     <div className="booking-card">
@@ -29,7 +34,7 @@ const Booking = () => {
 
                             <Form.Group>
                                 <Form.Label>Destination</Form.Label>
-                                <Form.Control defaultValue={selectedPlace[0].place} type="origin"  />
+                                <Form.Control defaultValue={placeToGo[0].place} type="origin"  />
                             </Form.Group>
                             <Calendar></Calendar>
                             <Link to='/hotel'>

@@ -20,7 +20,7 @@ const HeaderTypeOne = () => {
             <Nav.Link style={{color: 'white'}} href="#link">Blog</Nav.Link>
             <Nav.Link style={{color: 'white'}} href="#link">Contact</Nav.Link> 
             {loggedInUser.email?  <Nav.Link style={{color: 'white'}} href="#link">{loggedInUser.name}</Nav.Link>:
-                <Link to='/login'><button> Log In</button></Link>
+                <Link to='/login'><button className='login-btn'> Log In</button></Link>
             }
             </Nav>   
             

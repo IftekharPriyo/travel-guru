@@ -12,9 +12,6 @@ import { createUserWithEmailAndPassword, handleFbSignIn, handleGoogleSignIn, ini
 
 const Auth = () => {
 
-    //User Array
-
-
     const [newUser, setNewUser] = useState(true);
     const [user, setUser] = useState({
         isSignedIn: false,
@@ -25,7 +22,6 @@ const Auth = () => {
     })
 
 
-    //Context Call and hooks
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
@@ -34,13 +30,10 @@ const Auth = () => {
 
 
     //Initialization of firebase
-
     initializeLoginFrameWork();
 
 
     //Google Sign In handler
-
-
     function googleSignIn() {
         handleGoogleSignIn()
             .then(res => {
@@ -50,7 +43,6 @@ const Auth = () => {
 
 
     //Facebook Sign In handler
-
     function fbSignIn() {
         handleFbSignIn()
             .then(res => {
@@ -59,7 +51,6 @@ const Auth = () => {
     }
 
     //handleresponse
-
     const handleResponse = (res, redirect) =>{
         setUser(res);
         setLoggedInUser(res);
@@ -70,8 +61,6 @@ const Auth = () => {
 
 
     //Submit Button Handler
-
-
     const handleSubmit = (event) => {
         if (newUser && user.email && user.password) {
             createUserWithEmailAndPassword(user.name, user.email, user.password)
@@ -93,7 +82,6 @@ const Auth = () => {
 
 
     //Email and password validation
-
     const handleBlur = (event) => {
         let isFieldValid = true;
         if (event.target.name === "email") {

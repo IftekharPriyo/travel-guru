@@ -7,7 +7,8 @@ import HeaderTypeOne from '../HeaderTypeOne/HeaderTypeOne';
 import DashTexts from '../DashTexts/DashTexts';
 const Home = () => {
     return (
-        <div className="img-fluid" style={{ backgroundImage: `url(${Cover})` }}>
+        <div className="img-fluid" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)), url(${Cover})` }}>
         <HeaderTypeOne></HeaderTypeOne>
             <div className="container">
                 <div className="row cards">

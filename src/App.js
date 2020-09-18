@@ -15,14 +15,15 @@ import Auth from './Components/Auth/Auth';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
-
+export const PlaceContext = createContext();
 
 function App(props) {
   const [loggedInUser,setLoggedInUser] = useState({});
+  const [place,setPlace] = useState({});
   return (
     <div className="App">
     <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
-    
+    <PlaceContext.Provider value ={[place,setPlace]}>
       <Router>
         <Switch>
           <Route path='/DashBoard'>
@@ -48,7 +49,7 @@ function App(props) {
           </Route>
         </Switch>
       </Router>
-      
+      </PlaceContext.Provider>
       </UserContext.Provider>
 
     </div>
