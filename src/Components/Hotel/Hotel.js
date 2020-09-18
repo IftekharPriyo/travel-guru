@@ -51,7 +51,7 @@ const Hotel = () => {
                 </div>
                 <div className="col-6 col-md-6" style={{ height: '400px', width: '100%' }}>
                     <h1>Map</h1>
-                    <GoogleMap></GoogleMap>
+                    {/* <GoogleMap></GoogleMap> */}
                 </div>
             </div>
         </div>
