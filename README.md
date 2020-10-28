@@ -1,6 +1,6 @@
 # Travel Guru 
 
-#### A simple travel booking where a person can choose his destination and look for hotels.
+#### A simple travel booking website where a person can choose his destination and look for hotels in a specific date
 [Website](https://travel-guru-80328.web.app/)
 
 Technology Used
