@@ -11,4 +11,6 @@ Technology Used
 - [x] React-Bootstrap
 - [x] Firebase
 
-
+Run Locally
+------
+Clone and then just `npm start` and run it on localhost
