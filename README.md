@@ -5,11 +5,6 @@
 Technology Used
 ------
 
-⋅⋅* React 
-⋅⋅* React-Hooks
-⋅⋅* React-Router
-⋅⋅* Firebase
-⋅⋅* React-Bootstrap
-⋅⋅* Material Ui
+- [x] React
 
-! [Alt text](https://ibb.co/FqxC0D9 "Optional title")
+
